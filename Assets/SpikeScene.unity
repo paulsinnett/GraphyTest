@@ -323,8 +323,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spikes:
   - period: 1
+    delay: 0
     duration: 66
   - period: 10
+    delay: 0.5
     duration: 100
 --- !u!1001 &1530666237
 PrefabInstance:

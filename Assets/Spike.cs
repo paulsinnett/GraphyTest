@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpikeParams
 {
     public float period; // s
+    public float delay; // s
     public int duration; // ms
 }
 
@@ -23,10 +24,11 @@ public class Spike : MonoBehaviour
 
     IEnumerator SpikeGenerator(SpikeParams spike)
     {
+        yield return new WaitForSeconds(spike.delay);
         while (true)
         {
-            yield return new WaitForSeconds(spike.period);
             Thread.Sleep(spike.duration);
+            yield return new WaitForSeconds(spike.period);
         }
     }
 }
