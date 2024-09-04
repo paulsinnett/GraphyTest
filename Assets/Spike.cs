@@ -14,12 +14,17 @@ public class Spike : MonoBehaviour
 {
     public SpikeParams [] spikes;
 
-    void Start()
+    void OnEnable()
     {
         foreach (SpikeParams spike in spikes)
         {
             StartCoroutine(SpikeGenerator(spike));
         }
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator SpikeGenerator(SpikeParams spike)
