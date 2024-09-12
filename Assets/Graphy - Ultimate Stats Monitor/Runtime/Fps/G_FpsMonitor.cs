@@ -27,8 +27,6 @@ namespace Tayx.Graphy.Fps
         private short m_zero1PercentSamples = 1;
         private short m_fpsSamplesCount = 0;
         private short m_indexSample = 0;
-        private short m_discard = 3;
-
         private float m_unscaledDeltaTime = 0f;
 
         #endregion
@@ -51,14 +49,6 @@ namespace Tayx.Graphy.Fps
 
         private void Update()
         {
-            // discard the first few frames to avoid polluting the average
-            // window with outliers
-            if( m_discard > 0 )
-            {
-                m_discard--;
-                return;
-            }
-
             m_unscaledDeltaTime = Time.unscaledDeltaTime;
 
             // Update fps and ms
