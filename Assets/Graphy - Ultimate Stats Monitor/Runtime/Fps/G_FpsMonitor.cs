@@ -27,6 +27,7 @@ namespace Tayx.Graphy.Fps
         private short m_zero1PercentSamples = 1;
         private short m_fpsSamplesCount = 0;
         private short m_indexSample = 0;
+
         private float m_unscaledDeltaTime = 0f;
 
         #endregion
